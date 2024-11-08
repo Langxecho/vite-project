@@ -6,11 +6,11 @@
 </template>
 
 <script setup lang="ts">
-import { useTestStore } from '@/store/test/index'
-import { storeToRefs } from 'pinia'
+import { useTestStore } from '@/store/test/index';
+import { storeToRefs } from 'pinia';
 
-const store = useTestStore()
-const { count, msg } = storeToRefs(store)
+const store = useTestStore();
+const { count, msg } = storeToRefs(store);
 
 const addBtn = () => {
   // 第一种改变数据的方式
@@ -26,7 +26,7 @@ const addBtn = () => {
 
   // 第四种改变数据的方式
   store.$patch((state) => {
-    state.count = ++state.count
-  })
-}
+    state.count = ++state.count;
+  });
+};
 </script>
