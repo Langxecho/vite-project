@@ -9,13 +9,13 @@
 </template>
 
 <script setup lang="ts">
-import { ElButton, ElIcon } from 'element-plus'
-import { Plus } from '@element-plus/icons-vue'
+import { ElButton, ElIcon } from 'element-plus';
+import { Plus } from '@element-plus/icons-vue';
 
 // 注册组件
 const handleClick = () => {
-  console.log('按钮被点击')
-}
+  console.log('按钮被点击');
+};
 </script>
 
 <style scoped>
