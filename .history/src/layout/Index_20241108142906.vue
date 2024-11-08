@@ -13,8 +13,8 @@
 </template>
 
 <script setup lang="ts">
-import Header from '@/layout/header/Header.vue'
-import MenuBar from '@/layout/menu/MenuBar.vue'
+import Header from "@/layout/header/Header.vue";
+import MenuBar from "@/layout/menu/MenuBar.vue";
 </script>
 
 <style lang="scss">

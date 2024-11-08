@@ -1,5 +1,5 @@
 <template>
   <router-view />
-  </template>
+</template>
 
-  <style lang="scss"></style>
+<style lang="scss"></style>

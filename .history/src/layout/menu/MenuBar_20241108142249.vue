@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-defineProps(['menuList'])
+defineProps(["menuList"]);
 </script>
 
 <style scoped></style>

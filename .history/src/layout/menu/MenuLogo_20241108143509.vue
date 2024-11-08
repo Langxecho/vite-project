@@ -6,10 +6,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import MenuLogo from '@/assets/MenuLogo.png'
+import { ref } from "vue";
+import MenuLogo from "@/assets/MenuLogo.png";
 
-const title = ref('通用后台权限系统')
+const title = ref("通用后台权限系统");
 </script>
 
 <style scoped lang="scss">

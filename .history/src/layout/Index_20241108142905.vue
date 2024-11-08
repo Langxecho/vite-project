@@ -7,22 +7,20 @@
       <el-header class="header">
         <Header />
       </el-header>
-      <el-main class="main">
-        Main
-      </el-main>
+      <el-main class="main"> Main </el-main>
     </el-container>
   </el-container>
 </template>
 
 <script setup lang="ts">
-import Header from '@/layout/header/Header.vue';
-import MenuBar from '@/layout/menu/MenuBar.vue';
+import Header from "@/layout/header/Header.vue";
+import MenuBar from "@/layout/menu/MenuBar.vue";
 </script>
 
 <style lang="scss">
 .layout {
   height: 100%;
-  
+
   .asside {
     background-color: #304156;
   }

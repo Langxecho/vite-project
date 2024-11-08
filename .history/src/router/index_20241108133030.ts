@@ -1,17 +1,17 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-import Layout from '@/components/HelloWorld.vue';
+import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import Layout from "@/components/HelloWorld.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/home',
-    name: 'Home',
-    component: Layout
-  }
+    path: "/home",
+    name: "Home",
+    component: Layout,
+  },
 ];
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
 });
 
 export default router;

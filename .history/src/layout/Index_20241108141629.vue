@@ -11,15 +11,15 @@
 <style lang="scss">
 .layout {
   height: 100%;
-  
+
   .asside {
     background-color: blueviolet;
   }
-  
+
   .header {
     background-color: #009688;
   }
-  
+
   .main {
     background-color: darkcyan;
   }

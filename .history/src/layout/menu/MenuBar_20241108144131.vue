@@ -11,85 +11,85 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue'
-import MenuItem from '@/layout/menu/MenuItem.vue'
+import { reactive } from "vue";
+import MenuItem from "@/layout/menu/MenuItem.vue";
 // import MenuLogo from './MenuLogo.vue'
 let menuList = reactive([
   {
-    path: '/system',
-    component: 'Layout',
-    name: 'system',
+    path: "/system",
+    component: "Layout",
+    name: "system",
     meta: {
-      title: '系统管理',
-      icon: 'Setting',
-      roles: ['sys:manage']
+      title: "系统管理",
+      icon: "Setting",
+      roles: ["sys:manage"],
     },
     children: [
       {
-        path: '/userList',
-        component: '/system/User/UserList',
-        name: 'userList',
+        path: "/userList",
+        component: "/system/User/UserList",
+        name: "userList",
         meta: {
-          title: '用户管理',
-          icon: 'UserFilled',
-          roles: ['sys:user']
-        }
+          title: "用户管理",
+          icon: "UserFilled",
+          roles: ["sys:user"],
+        },
       },
       {
-        path: '/roleList',
-        component: '/system/Role/RoleList',
-        name: 'roleList',
+        path: "/roleList",
+        component: "/system/Role/RoleList",
+        name: "roleList",
         meta: {
-          title: '角色管理',
-          icon: 'Wallet',
-          roles: ['sys:role']
-        }
+          title: "角色管理",
+          icon: "Wallet",
+          roles: ["sys:role"],
+        },
       },
       {
-        path: '/menuList',
-        component: '/system/Menu/MenuList',
-        name: 'menuList',
+        path: "/menuList",
+        component: "/system/Menu/MenuList",
+        name: "menuList",
         meta: {
-          title: '菜单管理',
-          icon: 'Menu',
-          roles: ['sys:menu']
-        }
-      }
-    ]
+          title: "菜单管理",
+          icon: "Menu",
+          roles: ["sys:menu"],
+        },
+      },
+    ],
   },
   {
-    path: '/goodsRoot',
-    component: 'Layout',
-    name: 'goodsRoot',
+    path: "/goodsRoot",
+    component: "Layout",
+    name: "goodsRoot",
     meta: {
-      title: '商品管理',
-      icon: 'Setting',
-      roles: ['sys:goodsRoot']
+      title: "商品管理",
+      icon: "Setting",
+      roles: ["sys:goodsRoot"],
     },
     children: [
       {
-        path: '/category',
-        component: '/goods/Category',
-        name: 'category',
+        path: "/category",
+        component: "/goods/Category",
+        name: "category",
         meta: {
-          title: '物资类型',
-          icon: 'UserFilled',
-          roles: ['sys:category']
-        }
+          title: "物资类型",
+          icon: "UserFilled",
+          roles: ["sys:category"],
+        },
       },
       {
-        path: '/goodsList',
-        component: '/goods/GoodsList',
-        name: 'goodsList',
+        path: "/goodsList",
+        component: "/goods/GoodsList",
+        name: "goodsList",
         meta: {
-          title: '商品信息',
-          icon: 'Wallet',
-          roles: ['sys:goodsList']
-        }
-      }
-    ]
-  }
-])
+          title: "商品信息",
+          icon: "Wallet",
+          roles: ["sys:goodsList"],
+        },
+      },
+    ],
+  },
+]);
 </script>
 
 <style scoped lang="scss">
