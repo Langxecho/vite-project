@@ -13,7 +13,7 @@
       <el-main class="main">
         <div class="tabs">
           <Tabs class="tabs-content"></Tabs>
-          <ColseTabs></ColseTabs>
+          <CloseTabs></CloseTabs>
         </div>
         <router-view></router-view>
       </el-main>
@@ -48,16 +48,17 @@ import ColseTabs from "@/layout/tabs/ColseTabs.vue";
       flex-grow: 1;
       border-bottom: 1px solid #e4e7ed;
       padding-right: 75px;
-      .el-tabs {
-        width: 100%;
-        height: 33px;
-      }
+    }
 
-      .tabs-content {
-        padding-top: 8px;
-        padding-left: 10px;
-        padding-right: 10px;
-      }
+    .el-tabs {
+      width: 100%;
+      height: 33px;
+    }
+
+    .tabs-content {
+      padding-top: 8px;
+      padding-left: 10px;
+      padding-right: 10px;
     }
   }
 }

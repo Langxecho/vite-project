@@ -13,7 +13,7 @@
       <el-main class="main">
         <div class="tabs">
           <Tabs class="tabs-content"></Tabs>
-          <ColseTabs></ColseTabs>
+          <CloseTabs></CloseTabs>
         </div>
         <router-view></router-view>
       </el-main>
