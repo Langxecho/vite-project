@@ -13,7 +13,7 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
 import MenuItem from '@/layout/menu/MenuItem.vue'
-import MenuLogo from './MenuLogo.vue'
+import MenuLogo from './'
 let menuList = reactive([
   {
     path: '/system',
