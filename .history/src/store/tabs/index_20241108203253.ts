@@ -26,15 +26,16 @@ export const useTabStore = defineStore(
     const addTab = (tab: Tab) => {
       // 判断数据是否已存在选项卡列表中
       if (tabList.value.some((item) => item.path === tab.path)) return;
-
+    
       // 首⻚不能关闭
-      if (tab.path === "/dashboard") {
+      if (tab.path === '/dashboard') {
         // 如果是首⻚，加到第一个，不关闭
         tabList.value.unshift(tab);
       } else {
         tabList.value.push(tab);
       }
     };
+    
 
     return { tabList, getTab, addTab };
   },

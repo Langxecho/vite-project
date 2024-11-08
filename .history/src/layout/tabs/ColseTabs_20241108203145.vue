@@ -18,8 +18,8 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute, useRouter } from "vue-router";
-import { useTabStore, Tab } from "@/store/tabs";
+import { useRoute, useRouter } from 'vue-router';
+import { useTabStore, Tab } from '@/store/tabs';
 
 const store = useTabStore();
 const route = useRoute();
@@ -29,7 +29,7 @@ const router = useRouter();
 const closeCurrent = () => {
   const targetName = route.path;
   // 首⻚不能关闭
-  if (targetName === "/dashboard") return;
+  if (targetName === '/dashboard') return;
 
   // 选项卡数据
   const tabs = store.getTab;
@@ -58,9 +58,10 @@ const closeCurrent = () => {
 const closeAll = () => {
   store.tabList.splice(0, store.tabList.length); // 清空选项卡数据
   // 跳转首⻚
-  router.push({ path: "/dashboard" });
+  router.push({ path: '/dashboard' });
 };
 </script>
+
 
 <style scoped lang="scss">
 .close {
