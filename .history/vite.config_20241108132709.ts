@@ -9,13 +9,13 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 8080,
     open: true
-  },
+  }
   resolve: {
     alias: [
-      {
-        find: '@',
-        replacement: resolve(__dirname, 'src')
-      }
+    {
+    find: '@',
+    replacement: resolve(__dirname, 'src')
+    }
     ]
-  }
+    }
 })
