@@ -1,17 +1,13 @@
 <template>
-  <el-container class="mycontainer">
-    <!-- 左侧菜单栏 -->
-    <el-aside width="auto" class="leftmenu">
+  <el-container class="layout">
+    <el-aside width="auto" class="asside">
       <menu-bar></menu-bar>
     </el-aside>
-
-    <!-- 右侧内容区 -->
     <el-container>
       <el-header class="header">
-        <Header></Header>
+        <Header />
       </el-header>
       <el-main class="main">
-        <Tabs></Tabs>
         <router-view></router-view>
       </el-main>
     </el-container>
@@ -21,24 +17,24 @@
 <script setup lang="ts">
 import Header from "@/layout/header/Header.vue";
 import MenuBar from "@/layout/menu/MenuBar.vue";
-import Tabs from "@/layout/tabs/Tabs.vue";
 </script>
 
-<style scoped lang="scss">
-.mycontainer {
+<style lang="scss">
+.layout {
   height: 100%;
-  .leftmenu {
-    background-color: #304156;
-  }
+}
+
+.asside {
+  background-color: #304156;
 }
 
 .header {
-  background-color: #009688;
   display: flex;
   align-items: center;
+  background-color: #009688;
 }
 
 .main {
-  background-color: #ffffff;
+  background-color: darkgoldenrod;
 }
 </style>

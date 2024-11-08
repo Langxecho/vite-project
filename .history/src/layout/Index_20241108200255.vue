@@ -1,5 +1,5 @@
 <template>
-  <el-container class="mycontainer">
+  <el-container>
     <!-- 左侧菜单栏 -->
     <el-aside width="auto" class="leftmenu">
       <menu-bar></menu-bar>

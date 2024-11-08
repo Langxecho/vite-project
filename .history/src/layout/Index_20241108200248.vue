@@ -1,5 +1,5 @@
 <template>
-  <el-container class="mycontainer">
+  <el-container>
     <!-- 左侧菜单栏 -->
     <el-aside width="auto" class="leftmenu">
       <menu-bar></menu-bar>
@@ -30,7 +30,9 @@ import Tabs from "@/layout/tabs/Tabs.vue";
   .leftmenu {
     background-color: #304156;
   }
+  
 }
+
 
 .header {
   background-color: #009688;
