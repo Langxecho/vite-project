@@ -1,9 +1,9 @@
 <template>
-  <h2>用户管理</h2>
   <div>
+    <h2>菜单管理</h2>
     <el-button type="primary" size="default" @click="addBtn">新增</el-button>
     <sys-dialog
-      :title="dialog.title"
+      title="菜单管理"
       :visible="dialog.visible"
       :width="dialog.width"
       :height="dialog.height"
@@ -18,25 +18,13 @@
 </template>
 
 <script setup lang="ts">
-import SysDialog from "@/components/SysDialog.vue";
-import { reactive } from "vue";
+import SysDialog from '@/components/SysDialog.vue';
+import useDialog from '@/hooks/useDialog';
 
-const dialog = reactive({
-  title: "用户管理",
-  width: 600,
-  height: 300,
-  visible: false,
-});
+// 解构弹框属性
+const { dialog, onClose, onConfirm } = useDialog();
 
 const addBtn = () => {
   dialog.visible = true;
-};
-
-const onClose = () => {
-  dialog.visible = false;
-};
-
-const onConfirm = () => {
-  dialog.visible = false;
 };
 </script>
