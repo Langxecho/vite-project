@@ -12,7 +12,6 @@ import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 import { createPinia } from "pinia";
 
 const pinia = createPinia();
-pinia.use(piniaPersist);
 const app = createApp(App);
 
 app.use(ElementPlus).use(router).use(pinia).mount("#app");
