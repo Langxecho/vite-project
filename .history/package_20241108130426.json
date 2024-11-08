@@ -31,11 +31,7 @@
     "vue-tsc": "^2.1.8"
   },
   "lint-staged": {
-    "src/**/*.{js,cjs,ts,vue}": [
-      "npm run lint:fix"
-    ],
-    "src/**/*.{html,json,css,scss}": [
-      "npx prettier --write"
-    ]
+    "src/**/*.{js,cjs,ts,vue}": ["npm run lint:fix"],
+    "src/**/*.{html,json,css,scss}": ["npx prettier --write"]
   }
 }
