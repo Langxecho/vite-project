@@ -95,15 +95,9 @@ const rules = reactive({
 
 // 表单提交
 const commit = () => {
-  addRef.value?.validate(async (valid) => {
+  addRef.value?.validate((valid) => {
     if (valid) {
       console.log("表单验证通过");
-      let res = await addApi(addModel);
-      if (res && res.code === 200) {
-        ElMessage.success(res.msg);
-        // 关闭弹框
-        onClose();
-      }
     }
   });
 };
