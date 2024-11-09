@@ -43,7 +43,7 @@
     <el-pagination
       @size-change="sizeChange"
       @current-change="currentChange"
-      v-model:current-page="searchParm.currentPage"
+      :current-page.sync="searchParm.currentPage"
       :page-sizes="[10, 20, 40, 80, 100]"
       :page-size="searchParm.pageSize"
       layout="total, sizes, prev, pager, next, jumper"
@@ -145,6 +145,12 @@ const commit = () => {
   });
 };
 
+// 搜索
+const searchBtn = () => {};
+
+// 重置
+const resetBtn = () => {};
+
 // 编辑按钮
 const editBtn = (row: SysRole) => {
   console.log(row);
@@ -192,7 +198,7 @@ const searchBtn = () => {
 
 // 重置
 const resetBtn = () => {
-  searchParm.roleName = "";
+  searchParm.roleName = '';
   searchParm.currentPage = 1;
   getList();
 };

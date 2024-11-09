@@ -43,7 +43,7 @@
     <el-pagination
       @size-change="sizeChange"
       @current-change="currentChange"
-      v-model:current-page="searchParm.currentPage"
+      :current-page.sync="searchParm.currentPage"
       :page-sizes="[10, 20, 40, 80, 100]"
       :page-size="searchParm.pageSize"
       layout="total, sizes, prev, pager, next, jumper"
@@ -81,12 +81,11 @@
 </template>
 
 <script setup lang="ts">
-import { nextTick, onMounted, reactive, ref } from "vue";
+import { nextTick, onMounted, reactive, ref } from 'vue'
 import SysDialog from "@/components/SysDialog.vue";
 import useDialog from "@/hooks/useDialog";
 import { ElMessage, FormInstance } from "element-plus";
-import { addApi, getListApi } from "@/api/role";
-import { SysRole } from "@/api/role/RoleModel";
+import { addApi } from "@/api/role";
 
 // 表单 ref 属性
 const addRef = ref<FormInstance>();
@@ -99,7 +98,6 @@ const searchParm = reactive({
   currentPage: 1,
   pageSize: 10,
   roleName: "",
-  total: 0,
 });
 
 // 新增按钮点击事件
@@ -136,8 +134,6 @@ const commit = () => {
       let res = await addApi(addModel);
       if (res && res.code === 200) {
         ElMessage.success(res.msg);
-        // 刷新数据
-        getList();
         // 关闭弹框
         onClose();
       }
@@ -145,63 +141,9 @@ const commit = () => {
   });
 };
 
-// 编辑按钮
-const editBtn = (row: SysRole) => {
-  console.log(row);
-};
-
-// 删除按钮
-const deleteBtn = (roleId: string) => {
-  console.log(roleId);
-};
-
-// 页容量改变时触发
-const sizeChange = (size: number) => {
-  searchParm.pageSize = size;
-  getList();
-};
-
-// 页数改变时触发
-const currentChange = (page: number) => {
-  searchParm.currentPage = page;
-  getList();
-};
-
-// 表格高度
-const tableHeight = ref(0);
-
-// 表格数据
-const tableList = ref([]);
-
-// 查询列表
-const getList = async () => {
-  let res = await getListApi(searchParm);
-  if (res && res.code === 200) {
-    // 设置表格数据
-    console.log(res);
-    tableList.value = res.data.records;
-    // 设置分页总条数
-    searchParm.total = res.data.total;
-  }
-};
-
 // 搜索
-const searchBtn = () => {
-  getList();
-};
+const searchBtn = () => {};
 
 // 重置
-const resetBtn = () => {
-  searchParm.roleName = "";
-  searchParm.currentPage = 1;
-  getList();
-};
-
-// 页面加载时调用
-onMounted(() => {
-  nextTick(() => {
-    tableHeight.value = window.innerHeight - 230;
-  });
-  getList();
-});
+const resetBtn = () => {};
 </script>

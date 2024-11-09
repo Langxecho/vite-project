@@ -16,9 +16,6 @@ pinia.use(piniaPersist);
 const app = createApp(App);
 
 app.use(ElementPlus).use(router).use(pinia).mount("#app");
-app.use(ElementPlus, {
-  locale: zhCn,
-});
 
 // 全局注册图标组件
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {

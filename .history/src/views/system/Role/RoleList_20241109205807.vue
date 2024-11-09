@@ -43,7 +43,7 @@
     <el-pagination
       @size-change="sizeChange"
       @current-change="currentChange"
-      v-model:current-page="searchParm.currentPage"
+      :current-page.sync="searchParm.currentPage"
       :page-sizes="[10, 20, 40, 80, 100]"
       :page-size="searchParm.pageSize"
       layout="total, sizes, prev, pager, next, jumper"
@@ -88,7 +88,7 @@ import { ElMessage, FormInstance } from "element-plus";
 import { addApi, getListApi } from "@/api/role";
 import { SysRole } from "@/api/role/RoleModel";
 
-// 表单 ref 属性
+// 表单ref属性
 const addRef = ref<FormInstance>();
 
 // 弹框属性
@@ -106,7 +106,6 @@ const searchParm = reactive({
 const addBtn = () => {
   dialog.title = "新增角色";
   dialog.height = 180;
-  // 显示弹框
   onShow();
 };
 
@@ -129,16 +128,14 @@ const rules = reactive({
 });
 
 // 表单提交
-const commit = () => {
-  addRef.value?.validate(async (valid) => {
+const commit = async () => {
+  addRef.value?.validate((valid) => {
     if (valid) {
       console.log("表单验证通过");
       let res = await addApi(addModel);
-      if (res && res.code === 200) {
+      if (res && res.code == 200) {
         ElMessage.success(res.msg);
-        // 刷新数据
         getList();
-        // 关闭弹框
         onClose();
       }
     }
@@ -176,11 +173,8 @@ const tableList = ref([]);
 // 查询列表
 const getList = async () => {
   let res = await getListApi(searchParm);
-  if (res && res.code === 200) {
-    // 设置表格数据
-    console.log(res);
+  if (res && res.code == 200) {
     tableList.value = res.data.records;
-    // 设置分页总条数
     searchParm.total = res.data.total;
   }
 };

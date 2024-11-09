@@ -43,7 +43,7 @@
     <el-pagination
       @size-change="sizeChange"
       @current-change="currentChange"
-      v-model:current-page="searchParm.currentPage"
+      :current-page.sync="searchParm.currentPage"
       :page-sizes="[10, 20, 40, 80, 100]"
       :page-size="searchParm.pageSize"
       layout="total, sizes, prev, pager, next, jumper"
