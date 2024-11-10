@@ -10,5 +10,5 @@ export const getListApi = (parm: RoleListParm) => {
 };
 //编辑
 export const editApi = (parm: SysRole) => {
-  return http.put("/api/role", parm);
-};
+  return http.put('/api/role', parm)
+  }

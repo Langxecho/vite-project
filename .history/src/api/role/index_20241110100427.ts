@@ -9,6 +9,3 @@ export const getListApi = (parm: RoleListParm) => {
   return http.post("/api/role/getList", parm);
 };
 //编辑
-export const editApi = (parm: SysRole) => {
-  return http.put("/api/role", parm);
-};
