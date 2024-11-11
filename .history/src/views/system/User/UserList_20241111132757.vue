@@ -101,10 +101,10 @@
 import { reactive, ref, onMounted, nextTick } from "vue";
 import SysDialog from "@/components/SysDialog.vue";
 import useDialog from "@/hooks/useDialog";
-import { ElMessage, FormInstance } from "element-plus";
+import { FormInstance } from "element-plus";
 import SelectChecked from "@/components/SelectChecked.vue";
 import { getSelectApi } from "@/api/role/index";
-import { addApi } from "@/api/user/index";
+import { addApi } from '@/api/user/index'
 // 表单 ref 属性
 const addForm = ref<FormInstance>();
 
@@ -170,31 +170,12 @@ const rules = reactive({
   ],
 });
 
+// 新增按钮
 const addBtn = () => {
-  // 清空下拉数据
-  options.value = [];
-
-  // 获取下拉数据
-  getSelect();
-
-  // 设置弹框的标题和高度
   dialog.title = "新增";
-  dialog.height = 260;
-
-  // 显示弹框
+  dialog.height = 180;
   onShow();
-
-  // 等待下一次 DOM 更新，然后清空下拉选择内容
-  nextTick(() => {
-    selectRef.value.clear();
-  });
-
-  // 清空表单
-  addForm.value?.resetFields();
 };
-
-const selectRef = ref(null);
-
 let options = ref([]);
 // 勾选的值
 const selected = (value: Array<string | number>) => {
@@ -207,32 +188,20 @@ const selected = (value: Array<string | number>) => {
 const getSelect = async () => {
   let res = await getSelectApi();
   if (res && res.code === 200) {
-    // 清空旧的 options 数据
-    options.value = [];
-    // 更新 options 数据
     options.value = res.data;
   }
 };
 
 // 提交表单
 const commit = () => {
-  // 验证表单
-  addForm.value?.validate(async (valid) => {
+  addForm.value?.validate((valid) => {
     if (valid) {
       console.log("验证通过");
-      // 提交数据到 API
-      let res = await addApi(addModel);
-      if (res && res.code === 200) {
-        ElMessage.success(res.msg);
-        // 关闭弹框
-        onClose();
-      }
     }
   });
 };
-
 onMounted(() => {
-  // getSelect();
+  getSelect();
 });
 </script>
 

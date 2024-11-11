@@ -224,6 +224,7 @@ const commit = () => {
       let res = await addApi(addModel);
       if (res && res.code === 200) {
         ElMessage.success(res.msg);
+        ElMessage.
         // 关闭弹框
         onClose();
       }
