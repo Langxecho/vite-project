@@ -110,7 +110,7 @@
           <el-row v-if="addModel.type != '2'" :gutter="20">
             <el-col :span="12" :offset="0">
               <el-form-item label="菜单图标" prop="icon">
-                <el-input v-model="addModel.icon"></el-input>
+                <!-- <el-input v-model="addModel.icon"></el-input> -->
               </el-form-item>
             </el-col>
 
