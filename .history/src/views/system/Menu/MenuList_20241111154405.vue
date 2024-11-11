@@ -96,47 +96,47 @@
 </template>
 
 <script setup lang="ts">
-import SysDialog from "@/components/SysDialog.vue";
-import useDialog from "@/hooks/useDialog";
-import { FormInstance } from "element-plus";
-import { reactive, ref } from "vue";
-import { getParentApi } from "@/api/menu/index";
+import SysDialog from '@/components/SysDialog.vue'
+import useDialog from '@/hooks/useDialog'
+import { FormInstance } from 'element-plus'
+import { reactive, ref } from 'vue'
+import { getParentApi } from '@/api/menu/index'
 //表单ref属性
-const addForm = ref<FormInstance>();
+const addForm = ref<FormInstance>()
 //弹框属性
-const { dialog, onClose, onConfirm, onShow } = useDialog();
+const { dialog, onClose, onConfirm, onShow } = useDialog()
 
 //获取上级菜单数据
-const treeList = ref([]);
+const treeList = ref([])
 const getParent = async () => {
-  let res = await getParentApi();
+  let res = await getParentApi()
   if (res && res.code == 200) {
-    treeList.value = res.data;
+    treeList.value = res.data
   }
-};
+}
 //新增按钮
 const addBtn = () => {
   //获取上级菜单
-  getParent();
+  getParent()
   //显示弹框
-  onShow();
-};
+  onShow()
+}
 //表单绑定的对象
 const addModel = reactive({
-  menuId: "",
-  parentId: "",
-  title: "",
-  code: "",
-  name: "",
-  path: "",
-  url: "",
-  type: "0",
-  icon: "",
-  parentName: "",
-  orderNum: "",
-});
+  menuId: '',
+  parentId: '',
+  title: '',
+  code: '',
+  name: '',
+  path: '',
+  url: '',
+  type: '0',
+  icon: '',
+  parentName: '',
+  orderNum: ''
+})
 //表单验证规则
-const rules = reactive({});
+const rules = reactive({})
 </script>
 
 <style scoped></style>
