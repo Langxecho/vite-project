@@ -175,7 +175,7 @@ import {
   getRoleListApi,
   editApi,
   deleteApi,
-  resetPasswordApi,
+  resetPasswordApi
 } from "@/api/user/index";
 import useInstance from "@/hooks/useInstance";
 const { global } = useInstance();
@@ -400,19 +400,7 @@ const resetBtn = () => {
   searchParm.currentPage = 1;
   getList();
 };
-// 重置密码
-const resetPasswordBtn = async (userId: string) => {
-  const confirm = await global.$myConfirm(
-    "确定重置密码吗, 重置之后密码是【666666】?",
-  );
-  if (confirm) {
-    let res = await resetPasswordApi({ userId: userId });
-    if (res && res.code === 200) {
-      ElMessage.success(res.msg);
-      getList();
-    }
-  }
-};
+
 onMounted(() => {
   getList();
   nextTick(() => {

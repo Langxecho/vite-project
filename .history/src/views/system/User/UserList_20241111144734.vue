@@ -403,7 +403,7 @@ const resetBtn = () => {
 // 重置密码
 const resetPasswordBtn = async (userId: string) => {
   const confirm = await global.$myConfirm(
-    "确定重置密码吗, 重置之后密码是【666666】?",
+    '确定重置密码吗, 重置之后密码是【666666】?'
   );
   if (confirm) {
     let res = await resetPasswordApi({ userId: userId });
