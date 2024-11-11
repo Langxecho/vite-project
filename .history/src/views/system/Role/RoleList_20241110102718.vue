@@ -185,7 +185,7 @@ const editBtn = (row: SysRole) => {
   addRef.value?.resetFields();
 };
 
-import useInstance from "@/hooks/useInstance";
+import useInstance from '@/hooks/useInstance';
 
 // 获取全局golbal
 const { global } = useInstance();
@@ -194,7 +194,7 @@ const { global } = useInstance();
 const deleteBtn = async (roleId: string) => {
   console.log(roleId);
   console.log(global);
-  const confirm = await global.$myConfirm("确定删除该数据吗？");
+  const confirm = await global.$myConfirm('确定删除该数据吗？');
   console.log(confirm);
   if (confirm) {
     let res = await deleteApi(roleId);

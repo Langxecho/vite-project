@@ -14,5 +14,5 @@ export const editApi = (parm: SysRole) => {
 };
 //删除
 export const deleteApi = (roleId: string) => {
-  return http.delete(`/api/role/${roleId}`);
-};
+ return http.delete(`/api/role/${roleId}`)
+ }

@@ -185,25 +185,9 @@ const editBtn = (row: SysRole) => {
   addRef.value?.resetFields();
 };
 
-import useInstance from "@/hooks/useInstance";
-
-// 获取全局golbal
-const { global } = useInstance();
-
 // 删除按钮
-const deleteBtn = async (roleId: string) => {
+const deleteBtn = (roleId: string) => {
   console.log(roleId);
-  console.log(global);
-  const confirm = await global.$myConfirm("确定删除该数据吗？");
-  console.log(confirm);
-  if (confirm) {
-    let res = await deleteApi(roleId);
-    if (res && res.code === 200) {
-      ElMessage.success(res.msg);
-      // 刷新列表
-      getList();
-    }
-  }
 };
 
 // 页容量改变时触发

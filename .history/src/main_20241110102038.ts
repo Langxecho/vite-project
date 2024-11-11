@@ -13,9 +13,9 @@ import { createPinia } from "pinia";
 
 const pinia = createPinia();
 pinia.use(piniaPersist);
-import myConfirm from "./utils/myConfirm";
+import myConfirm from './utils/myConfirm
 const app = createApp(App);
-app.config.globalProperties.$myConfirm = myConfirm;
+ import myConfirm from './utils/myConfirm
 app.use(ElementPlus).use(router).use(pinia).mount("#app");
 app.use(ElementPlus, {
   locale: zhCn,
