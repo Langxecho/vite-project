@@ -298,17 +298,8 @@ const editBtn = async (row: User) => {
 };
 
 // 删除按钮
-// 删除按钮
-const deleteBtn = async (userId: string) => {
+const deleteBtn = (userId: string) => {
   console.log(userId);
-  const confirm = await global.$myConfirm("确定删除该数据吗?");
-  if (confirm) {
-    let res = await deleteApi(userId);
-    if (res && res.code == 200) {
-      ElMessage.success(res.msg);
-      getList();
-    }
-  }
 };
 const selectRef = ref(null);
 

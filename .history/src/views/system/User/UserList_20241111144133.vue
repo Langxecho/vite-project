@@ -161,15 +161,7 @@ import { ElMessage, FormInstance } from "element-plus";
 import SelectChecked from "@/components/SelectChecked.vue";
 import { getSelectApi } from "@/api/role/index";
 import { User } from "@/api/user/UserModel";
-import {
-  addApi,
-  getListApi,
-  getRoleListApi,
-  editApi,
-  deleteApi,
-} from "@/api/user/index";
-import useInstance from "@/hooks/useInstance";
-const { global } = useInstance();
+import { addApi, getListApi, getRoleListApi, editApi, deleteApi } from "@/api/user/index";
 // 表单 ref 属性
 const addForm = ref<FormInstance>();
 
@@ -298,17 +290,8 @@ const editBtn = async (row: User) => {
 };
 
 // 删除按钮
-// 删除按钮
-const deleteBtn = async (userId: string) => {
+const deleteBtn = (userId: string) => {
   console.log(userId);
-  const confirm = await global.$myConfirm("确定删除该数据吗?");
-  if (confirm) {
-    let res = await deleteApi(userId);
-    if (res && res.code == 200) {
-      ElMessage.success(res.msg);
-      getList();
-    }
-  }
 };
 const selectRef = ref(null);
 
