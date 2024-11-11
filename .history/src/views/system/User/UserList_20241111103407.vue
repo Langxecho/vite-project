@@ -199,9 +199,6 @@ const commit = () => {
     }
   });
 };
-onMounted(() => {
-  getSelect();
-});
 </script>
 
 <style scoped></style>

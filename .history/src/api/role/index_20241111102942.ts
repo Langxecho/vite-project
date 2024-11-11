@@ -18,5 +18,5 @@ export const deleteApi = (roleId: string) => {
 };
 // 角色下拉
 export const getSelectApi = () => {
-  return http.get("/api/role/selectList");
-};
+  return http.get('/api/role/selectList');
+}

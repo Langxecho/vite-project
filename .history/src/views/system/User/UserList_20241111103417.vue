@@ -200,8 +200,8 @@ const commit = () => {
   });
 };
 onMounted(() => {
-  getSelect();
-});
+  getSelect()
+ })
 </script>
 
 <style scoped></style>

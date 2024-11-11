@@ -69,14 +69,15 @@
 
           <el-row>
             <el-col :span="12" :offset="0">
-              <el-form-item prop="roleId" label="角色：">
-                <SelectChecked
-                  :options="options"
-                  @selected="selected"
-                ></SelectChecked>
-              </el-form-item>
+                <el-form-item prop="roleId" label="角色：">
+                    <SelectChecked
+                        :options="options"
+                        @selected="selected"
+                    ></SelectChecked>
+                </el-form-item>
             </el-col>
-          </el-row>
+        </el-row>
+        
 
           <el-row>
             <el-col :span="12">
@@ -97,12 +98,10 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, ref, onMounted } from "vue";
+import { reactive, ref } from "vue";
 import SysDialog from "@/components/SysDialog.vue";
 import useDialog from "@/hooks/useDialog";
 import { FormInstance } from "element-plus";
-import SelectChecked from "@/components/SelectChecked.vue";
-import { getSelectApi } from "@/api/role/index";
 
 // 表单 ref 属性
 const addForm = ref<FormInstance>();
@@ -127,7 +126,6 @@ const addModel = reactive({
   email: "",
   gender: "0",
   nickName: "",
-  roleId: "",
 });
 
 // 表单验证规则
@@ -175,21 +173,6 @@ const addBtn = () => {
   dialog.height = 180;
   onShow();
 };
-let options = ref([]);
-// 勾选的值
-const selected = (value: Array<string | number>) => {
-  console.log(value);
-  addModel.roleId = value.join(",");
-  console.log(addModel);
-};
-
-// 查询角色下拉数据
-const getSelect = async () => {
-  let res = await getSelectApi();
-  if (res && res.code === 200) {
-    options.value = res.data;
-  }
-};
 
 // 提交表单
 const commit = () => {
@@ -199,9 +182,6 @@ const commit = () => {
     }
   });
 };
-onMounted(() => {
-  getSelect();
-});
 </script>
 
 <style scoped></style>
