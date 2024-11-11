@@ -230,8 +230,8 @@ const rules = reactive({
 
 // 用户拥有的角色id
 const bindValue = ref([]);
-const roleIds = ref("");
-const tags = ref("");
+const roleIds = ref('');
+const tags = ref('');
 
 // 根据用户id查询角色
 const getRoleList = async (userId: string) => {
@@ -239,15 +239,15 @@ const getRoleList = async (userId: string) => {
   if (res && res.code === 200) {
     bindValue.value = res.data;
     console.log(res.data);
-    roleIds.value = res.data.join(",");
+    roleIds.value = res.data.join(',');
     console.log(roleIds.value);
   }
 };
 
 // 新增按钮
 const addBtn = () => {
-  tags.value = "0";
-  dialog.title = "新增";
+  tags.value = '0';
+  dialog.title = '新增';
   dialog.height = 230;
   // 显示弹框
   onShow();
@@ -266,8 +266,8 @@ const addBtn = () => {
 
 // 编辑按钮
 const editBtn = async (row: User) => {
-  tags.value = "1";
-  dialog.title = "编辑";
+  tags.value = '1';
+  dialog.title = '编辑';
   dialog.height = 230;
   // 清空下拉数据
   options.value = [];
@@ -283,7 +283,7 @@ const editBtn = async (row: User) => {
     Object.assign(addModel, row);
     // 设置角色的id
     addModel.roleId = roleIds.value;
-    addModel.password = "";
+    addModel.password = '';
   });
   // 清空表单
   addForm.value?.resetFields();
@@ -318,22 +318,19 @@ const getSelect = async () => {
 const commit = () => {
   // 验证表单
   addForm.value?.validate(async (valid) => {
-    console.log(addModel);
     if (valid) {
-      let res = null;
-      if (tags.value === "0") {
-        res = await addApi(addModel);
-      } else {
-        res = await editApi(addModel);
-      }
+      console.log("验证通过");
+      // 提交数据到 API
+      let res = await addApi(addModel);
       if (res && res.code === 200) {
         ElMessage.success(res.msg);
-        getList();
+        // 关闭弹框
         onClose();
       }
     }
   });
 };
+
 // 表格数据
 const tableList = ref([]);
 

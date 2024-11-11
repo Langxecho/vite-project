@@ -314,6 +314,7 @@ const getSelect = async () => {
   }
 };
 
+
 // 提交表单
 const commit = () => {
   // 验证表单
@@ -321,7 +322,7 @@ const commit = () => {
     console.log(addModel);
     if (valid) {
       let res = null;
-      if (tags.value === "0") {
+      if (tags.value === '0') {
         res = await addApi(addModel);
       } else {
         res = await editApi(addModel);

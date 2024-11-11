@@ -318,22 +318,19 @@ const getSelect = async () => {
 const commit = () => {
   // 验证表单
   addForm.value?.validate(async (valid) => {
-    console.log(addModel);
     if (valid) {
-      let res = null;
-      if (tags.value === "0") {
-        res = await addApi(addModel);
-      } else {
-        res = await editApi(addModel);
-      }
+      console.log("验证通过");
+      // 提交数据到 API
+      let res = await addApi(addModel);
       if (res && res.code === 200) {
         ElMessage.success(res.msg);
-        getList();
+        // 关闭弹框
         onClose();
       }
     }
   });
 };
+
 // 表格数据
 const tableList = ref([]);
 

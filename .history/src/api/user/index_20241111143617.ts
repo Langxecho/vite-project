@@ -10,7 +10,7 @@ export const getListApi = (parm: UserListParm) => {
 };
 // 根据用户id查询角色
 export const getRoleListApi = (userId: string) => {
-  return http.get("/api/sysUser/getRoleList?userId=" + userId);
+  return http.get("/api/sysUser/getRoleList?userId=3");
 };
 
 // 编辑
