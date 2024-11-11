@@ -5,7 +5,3 @@ import { MenuType } from "./MenuModel";
 export const getParentApi = () => {
   return http.get("/api/sysMenu/getParent");
 };
-//新增
-export const addApi = (parm: MenuType) => {
-  return http.post("/api/sysMenu", parm);
-};
