@@ -22,61 +22,7 @@
         <el-button icon="Plus" type="primary" @click="addBtn">新增</el-button>
       </el-form-item>
     </el-form>
-    <!-- 表格 -->
-    <el-table :height="tableHeight" :data="tableList" border stripe>
-      <el-table-column prop="nickName" label="姓名"></el-table-column>
-      <el-table-column prop="gender" label="性别">
-        <template #default="scope">
-          <el-tag
-            v-if="scope.row.gender == '0'"
-            type="primary"
-            size="default"
-            effect="dark"
-            >男</el-tag
-          >
-          <el-tag
-            v-if="scope.row.gender == '1'"
-            type="danger"
-            size="default"
-            effect="dark"
-            >女</el-tag
-          >
-        </template>
-      </el-table-column>
-      <el-table-column prop="phone" label="电话"></el-table-column>
-      <el-table-column prop="email" label="邮箱"></el-table-column>
-      <el-table-column align="center" width="220" label="操作">
-        <template #default="scope">
-          <el-button
-            type="primary"
-            icon="Edit"
-            size="default"
-            @click="editBtn(scope.row)"
-            >编辑</el-button
-          >
-          <el-button
-            type="danger"
-            icon="Delete"
-            size="default"
-            @click="deleteBtn(scope.row.userId)"
-            >删除</el-button
-          >
-        </template>
-      </el-table-column>
-    </el-table>
 
-    <!-- 分页 -->
-    <el-pagination
-      @size-change="sizeChange"
-      @current-change="currentChange"
-      v-model:current-page="searchParm.currentPage"
-      :page-sizes="[10, 20, 40, 80, 100]"
-      :page-size="searchParm.pageSize"
-      layout="total, sizes, prev, pager, next, jumper"
-      :total="searchParm.total"
-      background
-    >
-    </el-pagination>
     <!-- 新增编辑 -->
     <SysDialog
       :title="dialog.title"
@@ -159,9 +105,7 @@ import SysDialog from "@/components/SysDialog.vue";
 import useDialog from "@/hooks/useDialog";
 import { ElMessage, FormInstance } from "element-plus";
 import SelectChecked from "@/components/SelectChecked.vue";
-import { getSelectApi } from "@/api/role/index";
-import { addApi, getListApi } from "@/api/user/index";
-import { User } from "@/api/user/UserModel";
+import { addApi, getSelectApi,getListApi } from "@/api/role/index";
 // 表单 ref 属性
 const addForm = ref<FormInstance>();
 
@@ -353,6 +297,10 @@ const resetBtn = () => {
   searchParm.nickName = "";
   searchParm.phone = "";
   // 重置其他搜索参数...
+};
+
+// 重置搜索参数并提交
+const submitSearch = () => {
   searchParm.currentPage = 1;
   getList();
 };

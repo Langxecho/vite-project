@@ -9,11 +9,12 @@ export type User = {
   nickName: string;
   roleId: string;
 };
-//列表参数类型
-export type UserListParm = {
-  phone: string;
-  nickName: string;
-  currentPage: number;
-  pageSize: number;
-  total: number;
-};
+ //列表参数类型
+ TypeScript
+  export type UserListParm = {
+  phone: string
+  nickName: string
+  currentPage: number
+  pageSize: number
+  total: number
+  }

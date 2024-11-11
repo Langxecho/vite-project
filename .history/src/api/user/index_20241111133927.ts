@@ -4,7 +4,3 @@ import { User, UserListParm } from "./UserModel";
 export const addApi = (parm: User) => {
   return http.post("/api/sysUser", parm);
 };
-//列表
-export const getListApi = (parm: UserListParm) => {
-  return http.post("/api/sysUser/list", parm);
-};
