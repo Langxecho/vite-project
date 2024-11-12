@@ -50,7 +50,7 @@ import { reactive, ref } from "vue";
 import { updatePasswordApi } from "@/api/user/index";
 import { useRouter } from "vue-router";
 import { useUserStore } from "@/store/user";
-import useInstance from "@/hooks/useInstance";
+import useInstance from '@/hooks/useInstance';
 
 // 获取全局golbal
 const { global } = useInstance();
@@ -58,12 +58,12 @@ const { global } = useInstance();
 // 退出登录
 const logout = async () => {
   // 信息确定
-  const confirm = await global.$myConfirm("确定退出登录吗？");
+  const confirm = await global.$myConfirm('确定退出登录吗？');
   if (confirm) {
     // 清空数据
     localStorage.clear();
     // 跳转去登录
-    window.location.href = "/login";
+    window.location.href = '/login';
   }
 };
 const store = useUserStore();

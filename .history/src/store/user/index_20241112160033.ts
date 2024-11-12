@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { ref, computed } from "vue";
-import { getInfoApi } from "@/api/user";
+import { getInfoApi } from '@/api/user';
 // 定义 store：使用组合式 API 风格
 export const useUserStore = defineStore(
   "userStore",
@@ -56,7 +56,7 @@ export const useUserStore = defineStore(
       setUserId,
       setNickName,
       setToken,
-      getInfo,
+      getInfo
     };
   },
   {
