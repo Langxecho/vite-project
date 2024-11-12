@@ -1,7 +1,7 @@
 <template>
   <el-dropdown placement="bottom-start">
     <span class="el-dropdown-link">
-      <img class="userimg" src="@/assets/user.png" />
+      <img class="user-img" src="@/assets/user.png" />
     </span>
     <template #dropdown>
       <el-dropdown-menu>
@@ -122,16 +122,3 @@ const commit = () => {
   });
 };
 </script>
-
-<style scoped lang="scss">
-.el-dropdown-link:focus {
-  outline: none;
-}
-.userimg {
-  height: 45px;
-  width: 45px;
-  border-radius: 50%;
-  cursor: pointer;
-  background-color: #fff;
-}
-</style>

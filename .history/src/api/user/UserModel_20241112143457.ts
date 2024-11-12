@@ -30,7 +30,7 @@ export type AssignParm = {
 };
 //修改密码参数
 export type UpdateParm = {
-  userId: string;
-  oldPassword: string;
-  password: string;
-};
+ userId: string
+ oldPassword: string
+ password: string
+ }

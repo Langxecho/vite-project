@@ -1,7 +1,7 @@
 <template>
   <el-dropdown placement="bottom-start">
     <span class="el-dropdown-link">
-      <img class="userimg" src="@/assets/user.png" />
+      <img class="" src="@/assets/user.png" />
     </span>
     <template #dropdown>
       <el-dropdown-menu>

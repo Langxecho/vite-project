@@ -1,7 +1,7 @@
 <template>
   <el-dropdown placement="bottom-start">
     <span class="el-dropdown-link">
-      <img class="userimg" src="@/assets/user.png" />
+      <img class="user-img" src="@/assets/user.png" />
     </span>
     <template #dropdown>
       <el-dropdown-menu>
@@ -43,13 +43,13 @@
 </template>
 
 <script setup lang="ts">
-import SysDialog from "@/components/SysDialog.vue";
-import useDialog from "@/hooks/useDialog";
-import { ElMessage, FormInstance } from "element-plus";
-import { reactive, ref } from "vue";
-import { updatePasswordApi } from "@/api/user/index";
-import { useRouter } from "vue-router";
-import { useUserStore } from "@/store/user";
+import SysDialog from '@/components/SysDialog.vue';
+import useDialog from '@/hooks/useDialog';
+import { ElMessage, FormInstance } from 'element-plus';
+import { reactive, ref } from 'vue';
+import { updatePasswordApi } from '@/api/user/index';
+import { useRouter } from 'vue-router';
+import { useUserStore } from '@/store/user';
 
 const store = useUserStore();
 const router = useRouter();
@@ -62,17 +62,17 @@ const { dialog, onClose, onShow } = useDialog();
 
 // 修改密码
 const updateBtn = () => {
-  dialog.title = "修改密码";
+  dialog.title = '修改密码';
   dialog.height = 180;
   onShow();
 };
 
 // 表单对象
 const upModel = reactive({
-  userId: "",
-  oldPassword: "",
-  password: "",
-  confirm: "",
+  userId: '',
+  oldPassword: '',
+  password: '',
+  confirm: '',
 });
 
 // 表单验证规则
@@ -80,24 +80,24 @@ const rules = reactive({
   oldPassword: [
     {
       required: true,
-      trigger: ["blur", "change"],
-      message: "请输入原密码",
-    },
+      trigger: ['blur', 'change'],
+      message: '请输入原密码'
+    }
   ],
   password: [
     {
       required: true,
-      trigger: ["blur", "change"],
-      message: "请输入新密码",
-    },
+      trigger: ['blur', 'change'],
+      message: '请输入新密码'
+    }
   ],
   confirm: [
     {
       required: true,
-      trigger: ["blur", "change"],
-      message: "请输入确定密码",
-    },
-  ],
+      trigger: ['blur', 'change'],
+      message: '请输入确定密码'
+    }
+  ]
 });
 
 // 表单提交
@@ -107,7 +107,7 @@ const commit = () => {
     if (valid) {
       // 判断新密码和确定密码是否一致
       if (upModel.password !== upModel.confirm) {
-        ElMessage.warning("新密码和确定密码不一致!");
+        ElMessage.warning('新密码和确定密码不一致!');
         return;
       }
       let res = await updatePasswordApi(upModel);
@@ -116,7 +116,7 @@ const commit = () => {
         // 清空缓存
         sessionStorage.clear();
         // 跳转去登录
-        router.push({ path: "/login" });
+        router.push({ path: '/login' });
       }
     }
   });

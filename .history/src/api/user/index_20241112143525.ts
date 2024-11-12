@@ -41,6 +41,7 @@ export const getAssignTreeApi = (parm: AssignParm) => {
   return http.post("/api/sysUser/tree", parm);
 };
 //修改密码
-export const updatePasswordApi = (parm: UpdateParm) => {
-  return http.post("/api/sysUser/updatePassword", parm);
-};
+TypeScript
+ export const updatePasswordApi = (parm: UpdateParm) => {
+ return http.post('/api/sysUser/updatePassword', parm)
+ }
