@@ -35,8 +35,3 @@ export const getImgApi = () => {
 export const loginApi = (parm: Login) => {
   return http.post("/api/sysUser/login", parm);
 };
-
-//查询菜单树
-export const getAssignTreeApi = (parm: AssignParm) => {
-  return http.post("/api/sysUser/tree", parm);
-};

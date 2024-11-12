@@ -163,6 +163,7 @@ const editBtn = (row: SysRole) => {
 };
 //分配菜单按钮
 const assignBtn = (row: SysRole) => {
+  console.log(row);
   assignTree.value.show(row.roleId, row.roleName);
 };
 //删除按钮
