@@ -10,6 +10,7 @@ import { ElMessage } from "element-plus";
 const config = {
   baseURL: "http://localhost:8089",
   timeout: 10000,
+  withCredentials: true,
 };
 
 // 定义返回值类型
