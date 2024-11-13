@@ -17,7 +17,6 @@ pinia.use(piniaPersist);
 import myConfirm from "./utils/myConfirm";
 const app = createApp(App);
 app.config.globalProperties.$myConfirm = myConfirm;
-app.config.globalProperties.$echarts = echarts;
 app.use(ElementPlus, {
   locale: zhCn,
 });
